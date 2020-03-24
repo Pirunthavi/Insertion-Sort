@@ -1,0 +1,28 @@
+public class InsertionSort {
+
+  //author: Pirunthavi Sivakumar
+ 
+	public static int[] insertionSorting(int arr_sort[]){
+		for (int i = 1; i < arr_sort.length; i++) { 
+			int value = arr_sort[i];
+			int j; 
+			for ( j = i; j > 0 && arr_sort[j - 1] > value; j--)
+				arr_sort[j] = arr_sort[j - 1];
+			arr_sort[j] = value;
+			System.out.print("Iteration "+(i)+": ");
+			printArray(arr_sort);
+		}
+		return arr_sort;
+	}
+	
+	public static void printArray(int arr_sort[]){
+		for (int i = 0; i <arr_sort.length; i++)
+			System.out.print(arr_sort[i]+" ");
+		System.out.println();
+	}
+	
+	public static void main(String args[]){
+		int  arr_sort[]={25,30,40,100,15,65,55,10};
+		insertionSorting(arr_sort);
+	}
+}
